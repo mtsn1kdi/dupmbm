@@ -6,20 +6,42 @@
     <title>PENDAFTARAN ULANG PMB MTsN 1 Kendari</title>
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background-color: #e8f5e9;
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+            background-color: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        /* Tampilan Layar Belakang (Muncul jika Iframe diblokir browser) */
+        .loading-screen {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            text-align: center; z-index: 1; width: 90%;
+        }
+        .loading-screen h3 { color: #006b3f; margin-bottom: 10px; }
+        .loading-screen p { color: #555; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+        .btn-buka {
+            background-color: #006b3f; color: white; padding: 12px 24px;
+            text-decoration: none; border-radius: 8px; font-weight: bold;
+            display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .btn-buka:hover { background-color: #00502f; }
+        
+        /* Frame Aplikasi Utama */
         iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            width: 100%; height: 100%; border: none;
+            position: absolute; top: 0; left: 0; z-index: 10;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycby0KbGTCJvRoo56DE6JnOIF0v18Cny43peAdacnjKyoDk8qa7_S8BRYMMQuBSvOfdspgQ/exec"></iframe>
+
+    <div class="loading-screen">
+        <h3>Memuat Sistem PMBM...</h3>
+        <p>Jika tampilan tidak muncul otomatis,<br>keamanan browser Anda sedang memblokir akses iframe.</p>
+        <a href="https://script.google.com/macros/s/AKfycby0KbGTCJvRoo56DE6JnOIF0v18Cny43peAdacnjKyoDk8qa7_S8BRYMMQuBSvOfdspgQ/exec" target="_blank" class="btn-buka">
+            Buka Form Pendaftaran
+        </a>
+    </div>
+
+    <iframe src="https://script.google.com/macros/s/AKfycbxEzpG34al1cLOEA25zXX6miXWarAviKwlCgsWyVM1bUEwrPiIjklYNzTSD8LcRXbXyXQ/exec" allow="camera; microphone"></iframe>
+
 </body>
 </html>
